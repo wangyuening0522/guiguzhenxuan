@@ -23,6 +23,7 @@ onMounted(){
     </svg> -->
     <!-- <svg-icon name="phone" color="'pink'"> </svg-icon>
      -->
+     <router-view></router-view>
     <svg-icon></svg-icon>
   </div>
 </template>

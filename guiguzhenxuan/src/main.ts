@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+//引入路由，写好的router文件夹下面的index文件
+import router from  './router'
 //  获取应用实例对象
 // import globalComponent from './components/index'
 // 配置国际化
@@ -12,5 +14,6 @@ app.use(ElementPlus, {
   locale: zhCn,
 });
 // app.use(globalComponent);
+app.use(router);
 app.use(ElementPlus);
 app.mount("#app");

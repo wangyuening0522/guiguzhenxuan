@@ -1,0 +1,43 @@
+{
+  "guiguzhenxuan": {
+    "axios": {
+      "follow-redirects": "^1.15.0",
+      "form-data": "^4.0.0",
+      "proxy-from-env": "^1.1.0"
+    },
+    "element-plus": {
+      "@ctrl/tinycolor": "^3.4.1",
+      "@floating-ui/dom": "^1.0.1",
+      "@popperjs/core": "npm:@sxzz/popperjs-es@^2.11.7",
+      "@types/lodash": "^4.14.182",
+      "@types/lodash-es": "^4.17.6",
+      "@vueuse/core": "^9.1.0",
+      "async-validator": "^4.2.5",
+      "dayjs": "^1.11.3",
+      "escape-html": "^1.0.3",
+      "lodash": "^4.17.21",
+      "lodash-es": "^4.17.21",
+      "lodash-unified": "^1.0.2",
+      "memoize-one": "^6.0.0",
+      "normalize-wheel-es": "^1.2.0"
+    },
+    "sass": {
+      "chokidar": ">=3.0.0 <4.0.0",
+      "immutable": "^4.0.0",
+      "source-map-js": ">=0.6.2 <2.0.0"
+    },
+    "sass-loader": {
+      "neo-async": "^2.6.2"
+    },
+    "vue": {
+      "@vue/shared": "3.3.4",
+      "@vue/compiler-dom": "3.3.4",
+      "@vue/runtime-dom": "3.3.4",
+      "@vue/compiler-sfc": "3.3.4",
+      "@vue/server-renderer": "3.3.4"
+    },
+    "vue-router": {
+      "@vue/devtools-api": "^6.5.0"
+    }
+  }
+}
