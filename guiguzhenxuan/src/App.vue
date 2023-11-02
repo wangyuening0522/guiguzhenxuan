@@ -17,7 +17,7 @@ onMounted(){
 </style> -->
 <template>
   <div>
-    <h1>svg测试</h1>
+    <!-- <h1>svg测试</h1> -->
     <!--  <svg style="height:200px;width:100px">
       <use xlink:href="#icon-phone" fill="red"></use>
     </svg> -->
@@ -36,9 +36,9 @@ axios.post("/api/user/login",()=>{
   password:"111111"
 }) */
 import { onMounted } from "vue";
-import { reqLogin } from "@/api/user/index";
+// import { reqLogin } from "@/api/user/index";
 onMounted(() => {
-  reqLogin({ username: "system", password: "111111" });
+  // reqLogin({ username: "system", password: "111111" });
 });
 </script>
 <style scoped></style>

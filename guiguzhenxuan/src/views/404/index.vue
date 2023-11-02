@@ -1,7 +1,4 @@
 <template>
-	<div>
-		我是404
-	</div>
+  <div>我是404</div>
 </template>
-<script>
-</script>
+<!-- <script></script> -->

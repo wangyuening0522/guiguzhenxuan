@@ -19,8 +19,8 @@ export const constantRoute = [
   },
   //重定向,兜底，主要正则匹配
   {
-	path:'/:pathMatch(.*)*',
-	redirect:'/404',
-	name:'Any'
-  }
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
+    name: "Any",
+  },
 ];
