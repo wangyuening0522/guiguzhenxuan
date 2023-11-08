@@ -3,16 +3,16 @@
     <el-row>
       <el-col :span="12" :xs="0">left</el-col>
       <el-col :span="12" :xs="0">
-        <el-form class="login_form" :rules="rules">
+        <el-form class="login_form" :rules="rules" :model="loginForm">
           <h1>HELLO</h1>
           <h2>欢迎来到硅谷甄选</h2>
-          <el-form-item>
+          <el-form-item prop="username">
             <el-input
               v-model="loginForm.username"
               :prefix-icon="User"
             ></el-input>
           </el-form-item>
-          <el-form-item>
+          <el-form-item prop="password">
             <el-input
               v-model="loginForm.password"
               :prefix-icon="Lock"
@@ -48,23 +48,54 @@ const loginForm = reactive({
   username: "",
   password: "",
 });
+//关于校验username
+const validatorUserName = (rule: any, value: any, callback: any) => {
+  //rule
+  //value 表单元素文本内容
+  //callback
+  console.log("value",value);
+  if (value.length >= 6&&value.length<=10) {
+    callback();
+  } else {
+    callback(new Error("账号长度是6-10位"));
+  }
+};
+const validatorPassWord = (rule: any, value: any, callback: any) => {
+  if (value.length >= 6&&value.length<=15) {
+    callback();
+  } else {
+    callback(new Error("密码长度是6-15位"));
+  }
+};
 //不是动态变化的数据，是规则
-const rules={
+const rules = {
   /* 1.必填  2.最长最短  3.触发时发生校验 */
-  username:[
+  username: [
+    /*  {
+      required: true,
+      min: 5,
+      max: 10,
+      message: "长度应为6-10位", //报错信息，
+      trigger: "blur",
+    }, */
+    /* 自定义 */
     {
-      required:true,
-      min:5,
-      max:10,
-      message:'长度应为6-10位',//报错信息，
-      trigger:'change'
-    }
+      trigger: "blur",
+      validator: validatorUserName,
+    },
   ],
-  password:[{
-
-  }]
-}
-
+  password: [
+    {
+      /*  required: true,
+      min: 6,
+      max: 15,
+      message: "长度6-15位",
+      trigger: "blur", */
+      trigger: "blur",
+      validator: validatorPassWord,
+    },
+  ],
+};
 
 const login = async () => {
   loading.value = true;
@@ -85,7 +116,6 @@ const login = async () => {
   } catch (error) {
     $router.push("/404");
     console.log("error", error);
-
     ElNotification({
       type: "error",
       message: (error as Error).message,

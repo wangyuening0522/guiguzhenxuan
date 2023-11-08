@@ -1,2 +1,6 @@
 //引入秦楚默认样式
 @import reset.scss
+//滚动条全局设置
+::-webkit-scrollbar{
+	width:10px;
+}

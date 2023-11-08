@@ -9,6 +9,8 @@ enum API {
 export const reqLogin = (data: loginFormData) => {
   //分装好的axios:<分别的类型>(地址，数据)
   request.post<any, loginResponseData>(API.LOGIN_URL, data);
+  // console.log(111);
+  
 };
 
 // export const regLogin = data;

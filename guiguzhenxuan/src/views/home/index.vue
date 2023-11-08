@@ -1,3 +1,7 @@
 <template>
-  <div>我是home首页面</div>
+	<div>
+		
+	</div>
 </template>
+<script>
+</script>
