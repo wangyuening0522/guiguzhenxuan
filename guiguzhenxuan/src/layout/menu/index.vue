@@ -5,29 +5,34 @@
     <template v-for="(item, index) in menuList" :key="item.path">
       <template v-if="!item.children">
         <el-menu-item>
-          <el-icon>
+          <!-- <el-icon>
             <component :is="item.meta.icon"></component>
-          </el-icon>
-          <template #title>
+          </el-icon> -->
+          {{ item.meta.title }}
+          <!-- <template #title>
             <span>{{ item.meta.title }}</span>
-          </template>
+          </template> -->
         </el-menu-item>
       </template>
-      <!-- <template v-for="person in persons">
-        <div>{{ person.id }} - {{ person.name }}</div>
-      </template> -->
-      <template></template>
-      <template></template>
+      <template v-if="item.children">
+        <el-menu-item>
+          {{ item.meta.title }}
+        </el-menu-item>
+      </template>
     </template>
   </div>
 </template>
 <script setup lang="ts">
+/* 
+<template v-if="item.children && item.children > 1">
+          <el-sub-menu>
+            <span>{{ item.meta.name }} </span>
+            <!-- 递归传给menu组件，然后依次渲染 -->
+            <Menu :menuList="item.children" />
+          </el-sub-menu>
+        </template> */
 // import {defineProps} from 'vue';不需要引入
 defineProps(["menuList"]);
-const persons = [
-  { id: 1, name: "11" },
-  { id: 2, name: "22" },
-];
 </script>
 <style scoped>
 .style {
