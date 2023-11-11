@@ -1,8 +1,13 @@
 //创建用户相关的小仓库
 import { defineStore } from "pinia";
 import { reqLogin } from "@/api/user";
-import type { loginFormData, loginResponseData } from "@/api/user/type";
-import { constantRoute } from "@/router/routes";
+import type {
+  loginFormData,
+  loginResponseData,
+  userInfoResponseData,
+} from "@/api/user/type";
+import { constantRoute, asyncRoute, anyRoute } from "@/router/routes";
+
 const useUserStore = defineStore("User", {
   //小仓库存储数据
   state: () => {
@@ -27,28 +32,9 @@ const useUserStore = defineStore("User", {
         return "ok";
       }
     },
-   /*  async userInfo() {
-      let res: userInfoResponseData = await reqUserInfo();
-
-      if (res.code === 200) {
-        this.username = res.data.name as string;
-        this.avatar = res.data.avatar as string;
-        let userAsyncRoute = filterAsyncRoute(
-          cloneDeep(asyncRoute),
-          res.data.routes
-        );
-        this.menuRoutes = [...constantRoute, ...userAsyncRoute, anyRoute];
-        [...userAsyncRoute, anyRoute].forEach((route: any) => {
-          console.log(route);
-
-          router.addRoute(route);
-          console.log("router", router);
-        });
-        return "ok";
-      } else {
-        return Promise.reject(new Error(res.message));
-      }
-    }, */
+    union() {
+      this.menuRoutes = [...constantRoute, ...asyncRoute, anyRoute];
+    },
   },
   getters: {},
 });

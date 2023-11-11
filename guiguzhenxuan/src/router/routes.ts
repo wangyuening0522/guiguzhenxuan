@@ -1,121 +1,3 @@
-/* //constantRoute路由配置
-export const constantRoute = [
-  {
-    //登陆路由
-    path: "/login",
-    component: () => import("@/views/login/index.vue"),
-    //命名路由
-    name: "login",
-    //路由原信息(包含title和hidden)
-    meta: {
-      title: "登录",
-      hidden: false,
-    },
-  },
-  //主页面
-  {
-    //登陆成功后-layout布局页面(左边栏，上边栏，main页面)
-    path: "/",
-    component: () => import("@/layout/index.vue"),
-    name: "layout",
-    meta: {
-      title: "layout",
-      hidden: false,
-      icon: "layout",
-    },
-    // redirect: "/home",
-    children: [
-      //布局页面的main页面
-      {
-        path: "/home",
-        component: () => import("@/views/home/index.vue"),
-        name: "home",
-        meta: {
-          title: "首页",
-          hidden: false,
-          icon: "HomeFilled",
-        },
-      },
-      {
-        path: "/screen",
-        component: () => import("@/views/screen"),
-        name: "screen",
-        meta: {
-          title: "首页",
-          hidden: false,
-          icon: "HomeFilled",
-        },
-      },
-    ],
-  },
-  //二级标题1
-  {
-    path: "/ac1",
-    component: () => import("@/layout/index.vue"),
-    name: "Ac1",
-    meta: {
-      title: "权限管理",
-      hidden: false,
-      icon: "Lock",
-    },
-    children: [
-      {
-        path: "/ac1/user",
-        component: "@/views/acl/user/index.vue",
-        name: "User",
-        meta: {
-          title: "用户管理",
-          hidden: false,
-          icon: "User",
-        },
-      },
-      {
-        path: "/ac1/role",
-        component: "@/views/acl/role/index.vue",
-        name: "Role",
-        meta: {
-          title: "角色管理",
-          hidden: false,
-          icon: "Avatar",
-        },
-      },
-      {
-        path: "/acl/permission",
-        component: () => import("@/views/ac1/permission/index.vue"),
-        name: "Permission",
-        meta: {
-          title: "菜单管理",
-          hidden: false,
-          icon: "List",
-        },
-      },
-    ],
-  },
-];
-//export const asyncRoute = [];
-//任意路由
-export const anyRoute = [
-  //报错页面
-  {
-    path: "/404",
-    component: () => import("@/views/404/index.vue"),
-    name: "404",
-    meta: {
-      title: "404",
-      hidden: false,
-    },
-  },
-  //重定向,兜底，主要正则匹配
-  {
-    path: "/:pathMatch(.*)*",
-    redirect: "/404",
-    name: "Any",
-    meta: {
-      title: "Any",
-      hidden: false,
-    },
-  },
-]; */
 /*
  * @Description: Stay hungry，Stay foolish
  * @Author: Huccct
@@ -124,7 +6,6 @@ export const anyRoute = [
  * @LastEditTime: 2023-06-02 10:33:35
  */
 export const constantRoute = [
-  //登录
   {
     path: "/login",
     component: () => import("@/views/login/index.vue"),
@@ -134,7 +15,6 @@ export const constantRoute = [
       hidden: true,
     },
   },
-  //有子组件
   {
     path: "/",
     component: () => import("@/layout/index.vue"),
@@ -157,7 +37,6 @@ export const constantRoute = [
       },
     ],
   },
-  //大屏
   {
     path: "/screen",
     component: () => import("@/views/screen/index.vue"),
@@ -168,7 +47,6 @@ export const constantRoute = [
       icon: "Platform",
     },
   },
-  //404
   {
     path: "/404",
     component: () => import("@/views/404/index.vue"),

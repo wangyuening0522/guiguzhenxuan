@@ -34,6 +34,7 @@ import Logo from "./logo/index.vue";
 import Menu from "./menu/index.vue";
 import useUserStore from "@/store/modules/user";
 let userStore = useUserStore();
+userStore.union();
 </script>
 <style lang="scss" scoped>
 .layout-container {
