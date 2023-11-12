@@ -19,6 +19,12 @@
           </el-menu>
         </el-scrollbar>
       </el-aside>
+      <el-container>
+        <el-header class="header"> 我是header </el-header>
+        <el-main class="main"> 
+          <router-view></router-view>
+        </el-main>
+      </el-container>
     </el-container>
     <!-- 左侧菜单 -->
     <div class="layout_slider"></div>
@@ -62,5 +68,11 @@ userStore.union();
     height: calc(100vh - 60px);
     background-color: red;
   } */
+  .header{
+    background-color: antiquewhite;
+  }
+  .main{
+    background-color:red ;
+  }
 }
 </style>

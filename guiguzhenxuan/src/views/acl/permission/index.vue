@@ -1,7 +1,8 @@
 <template>
 	<div>
-		我是home
+		我是permission
 	</div>
 </template>
-<script>
+<script lang="ts" setup>
+
 </script>

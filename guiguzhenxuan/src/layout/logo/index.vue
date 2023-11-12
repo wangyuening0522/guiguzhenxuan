@@ -21,7 +21,7 @@ import setting from "@/setting";
   padding: 10px;
   height: 40px;
   color: #959ea6;
-  width: 25%;
+  // width: 25%;
   box-sizing: content-box;
   img {
     border-radius: 30%;

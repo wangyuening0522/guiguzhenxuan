@@ -62,13 +62,14 @@ export const asyncRoute = [
   {
     path: "/acl",
     component: () => import("@/layout/index.vue"),
-    name: "Acl",
+    name: "acl",
     meta: {
       title: "权限管理",
       hidden: false,
       icon: "Lock",
     },
-    redirect: "/acl/user",
+    //好像也没什么用
+    // redirect: "/acl/user",
     children: [
       {
         path: "/acl/user",

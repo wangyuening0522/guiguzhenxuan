@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import { constantRoute } from "./routes";
+import { constantRoute, asyncRoute, anyRoute } from "./routes";
 //常见路由器
 let router = createRouter({
   //路由模式hash
   history: createWebHashHistory(),
-  routes: constantRoute,
+  routes: [...constantRoute,...asyncRoute,anyRoute],
   //滚动行为(??)
   scrollBehavior() {
     return {
